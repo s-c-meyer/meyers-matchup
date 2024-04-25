@@ -1,13 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import Root from "./components/root"
+import ErrorPage from './components/error-page';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ProfileView from './components/profile-view';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    // children: [
+    //   {
+    //     path: 'profile',
+    //     element: <ProfileView />
+    //   }
+    // ]
+  },
+  {
+    path: 'profile',
+    element: <ProfileView />
+  }
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
