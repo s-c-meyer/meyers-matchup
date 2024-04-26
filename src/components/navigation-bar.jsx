@@ -8,11 +8,11 @@ export default function NavigationBar() {
   return (
     <Navbar collapseOnSelect expand="lg" className='bg-body-tertiary'>
       <Container>
-        <Navbar.Brand href="#home">Meyer's Matchup</Navbar.Brand>
+        <Navbar.Brand as={Link} to='/'>Meyer's Matchup</Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='me-auto'>
-            <Nav.Link as={Link} to="/profile" href='#profile'>Profile</Nav.Link>
+            <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
             <Nav.Link href='#leaderboard'>Leaderboard</Nav.Link>
             <NavDropdown title='Game Selection' id='collapsible-nav-dropdown'>
               <NavDropdown.Item href='game1'>Game1</NavDropdown.Item>
